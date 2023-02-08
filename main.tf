@@ -65,7 +65,7 @@ resource "aws_instance" "flask" {
     instance_type = "t2.micro"
     key_name      = aws_key_pair.generated_key.key_name
     security_groups = [aws_security_group.group.name]
-    user_data = "${file("/home/user/Downloads/test/python-crud/scripts/install-docker.sh")}"
+    user_data = "${file("install-docker.sh")}"
     # connection  {
     #   host = self.public_ip
     #   type = "ssh"
